@@ -12,8 +12,17 @@ $nav-grey:         #6f7c82;
 $dark-hover:       #0F7EDE;
 $alert-red:        #c11111;
 $alert-green:      #0ea50e;
+$newbackground:    #f9f9f9;
 
-/* GENERAL BOOTSTRAP RULES */
+/* GENERAL RULES */
+body {
+    background: $newbackground;
+}
+
+a {
+    font-family: Open Sans,sans-serif;
+}
+
 .input-lg {
     &:focus {
         border: 1px solid $light-blue;
@@ -39,15 +48,14 @@ $alert-green:      #0ea50e;
 }
 
 .alert-notice {
-    color: white;
+    color: #009d1b;
     font-family: 'Open Sans', sans-serif;
-    font-weight: 800;
-    border: 1px solid chartreuse;
+    border: 2px solid #009d1b;
     margin: 0 30%;
-    border-radius: 5px;
-    background-color: $alert-green; /* background: linear-gradient(#62B1F5, #0C8FFF 85%, #46AAE4); */
-    padding-bottom: 6px;
-    padding-top: 6px;
+    background: white;
+    padding: 6px 6px;
+    border-radius: 7px;
+    font-size: 16px;
 }
 
 .row-centered {
@@ -85,7 +93,7 @@ $alert-green:      #0ea50e;
 
 /* HEADER */
 .navbar-default {
-    background-color: white;
+    background-color: $newbackground;
     border: none;
     .navbar-header {
         .navbar-toggle {
@@ -107,6 +115,16 @@ $alert-green:      #0ea50e;
             }
             .dropdown-menu {
                 border: 1px solid white;
+                li {
+                    a {
+                        color: #337ab7;
+                        font-weight: 600;
+                        &:hover {
+                            color: #23527c;
+                            background-color: #f4f4f4;
+                        }
+                    }
+                }
             }
         }
     }
@@ -351,9 +369,11 @@ div {
 
 #loginew {
     border: 1px solid #eee !important;
-    border-radius: 4px;
+    border-radius: 8px;
     width: 330px;
     text-align: center;
+    background: white;
+    box-shadow: 0 0 20px 1px #ababab;
     h4 {
         margin-top: 10%;
         font-size: 1.1em;
@@ -690,6 +710,7 @@ div {
     overflow-y: auto;
     background: #fff;
     border-right: 1px solid #eee;
+    border-top: 1px solid #eee;
     -webkit-transition: all 0.5s ease;
     -moz-transition: all 0.5s ease;
     -o-transition: all 0.5s ease;
@@ -734,7 +755,6 @@ div {
             display: block;
             text-decoration: none;
             color: #337ab7;
-            font-family: Open Sans,sans-serif;
             font-size: 14px;
             &:hover {
                 text-decoration: none;
