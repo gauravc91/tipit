@@ -1,0 +1,32 @@
+<% provide(:title, "Log in") %>
+<div class="row row-centered">
+  <h2><%= link_to "tipit", root_path, id: "logo-sign-in"%></h2>
+  <div class="col-xs-12 col-centered" id="loginew">
+
+    <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+      <h4><b>Welcome Back!</b></h4>
+
+      <hr>
+
+      <%= f.email_field :email, :placeholder=> "Email Address", class: "form-control input-lg" %>
+
+      <%= f.password_field :password, autocomplete: "off", :placeholder=> "Password", class: "form-control input-lg" %>
+
+      <%= f.label :remember_me, class: "checkbox inline col-xs-6" do %>
+      <%= f.check_box :remember_me %>
+      <span>Remember me</span>
+      <% end %>
+      
+      <br>
+      <br>
+
+      <%= f.submit "Sign in to your account", class: "btn btn-lg btn-primary btn-block" %>
+
+    <% end %>
+
+    <br>
+
+    <%= render "devise/shared/links" %>
+
+  </div>
+</div>

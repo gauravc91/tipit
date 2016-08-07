@@ -1,0 +1,15 @@
+<div class="col-sm-2 sidebar hidden-xs">
+    <ul class="nav" data-spy="affix">
+        <h4>General</h4>
+        <li><%= link_to "Dashboard", "#" %></li>
+        <li><%= link_to "Campaigns", "#" %></li>
+        <hr>
+        <h4>Account</h4>
+        <li><%= link_to "Plan", "#" %></li>
+        <li><%= link_to "Account Settings", edit_user_password_path(current_user), class: active_sidebar_class(edit_user_password_path(current_user)) %></li>
+        <li><%= link_to "Sign Out", destroy_user_session_path, method: "delete" %></li>
+    </ul>
+</div>
+<div class="visible-xs">
+    <span>Mobile Account Settings Nav</span>
+</div>

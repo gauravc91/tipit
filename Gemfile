@@ -14,9 +14,11 @@ gem 'uglifier',               '2.7.2'
 gem 'coffee-rails',           '4.1.1'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
+gem 'bootstrap-social-rails'
+gem 'font-awesome-rails'
 gem 'bootstrap-sass',         '3.3.6'
-
-
+gem 'devise'
+gem 'omniauth-facebook'
 # Use jquery as the JavaScript library
 gem 'jquery-rails',           '4.1.1'
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks

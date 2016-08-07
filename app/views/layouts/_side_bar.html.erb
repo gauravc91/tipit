@@ -1,0 +1,55 @@
+<div id="sidebar-wrapper">
+    <ul id="sidebar-nav">
+        <h4>General</h4>
+        <li>
+            <%= link_to "#", class: "" do %>
+            <i class="fa fa-desktop"></i>
+            Dashboard
+            <% end %>
+        </li>
+        <hr>
+        <li>
+            <%= link_to "#", class: "" do %>
+            <i class="fa fa-pencil-square"></i>
+            Campaigns
+            <% end %>
+        </li>
+        <hr>
+        <li>
+            <%= link_to "#", class: "" do %>
+            <i class="fa fa-envelope-square"></i>
+            Captured Emails
+            <% end %>
+        </li>
+        <hr>
+        <li>
+            <%= link_to "#", class: "" do %>
+            <i class="fa fa-usd"></i>
+            Plan
+            <% end %>
+        </li>
+        <hr>
+        <h4>Account</h4>
+        <li>
+            <%= link_to "#", class: "" do %>
+            <i class="fa fa-eye"></i>
+            Overview
+            <% end %>
+        </li>
+        <hr>
+        <li>
+            <%= link_to edit_user_registration_path, class: active_sidebar_class(edit_user_registration_path) do %>
+            <i class="fa fa-cogs"></i>
+            Account Settings
+            <% end %>
+        </li>
+        <hr>
+        <li>
+            <%= link_to destroy_user_session_path, method: "delete" do %>
+            <i class="fa fa-sign-out"></i>
+            Sign Out
+            <% end %>
+        </li>
+        <hr>
+    </ul>
+</div>
