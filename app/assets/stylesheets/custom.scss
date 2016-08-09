@@ -16,7 +16,7 @@ $newbackground:    #f9f9f9;
 
 /* GENERAL RULES */
 body {
-    background: $newbackground;
+    background: #fff;
 }
 
 a {
@@ -45,6 +45,10 @@ a {
 
 .alert-alert {
     color: $alert-red;
+    background-color: white;
+    border: 2px solid $alert-red;
+    margin: 0 30%;
+    padding: 10px 10px;
 }
 
 .alert-notice {
@@ -93,7 +97,7 @@ a {
 
 /* HEADER */
 .navbar-default {
-    background-color: $newbackground;
+    background-color: #fff;
     border: none;
     .navbar-header {
         .navbar-toggle {
@@ -212,6 +216,7 @@ a {
     margin-top: -2px;
     background-color: white !important;
     color: $light-blue !important;
+    font-weight: 600;
     &:hover {
         background-color: $light-blue !important;
         border: 2px solid $dark-blue;
@@ -709,12 +714,11 @@ div {
     margin-left: -210px;
     overflow-y: auto;
     background: #fff;
-    border-right: 1px solid #eee;
-    border-top: 1px solid #eee;
     -webkit-transition: all 0.5s ease;
     -moz-transition: all 0.5s ease;
     -o-transition: all 0.5s ease;
     transition: all 0.5s ease;
+    box-shadow: 0 0 10px 1px #ababab;
 }
 
 #page-content-wrapper {
