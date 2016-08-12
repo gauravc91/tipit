@@ -34,6 +34,7 @@ gem 'bcrypt',                 '3.1.11'
 gem 'will_paginate',          '3.0.7'
 gem 'bootstrap-will_paginate', '0.0.10'
 gem 'stripe'
+gem 'simple_form',            '~> 3.2.1'
 # gem 'whenever', :require => false CRONJOBS GEM
 
 # Use Unicorn as the app server
