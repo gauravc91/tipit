@@ -9,7 +9,7 @@
         </li>
         <hr>
         <li>
-            <%= link_to "#", class: "" do %>
+            <%= link_to campaigns_path, class: active_sidebar_class(campaigns_path || new_campaigns_path) do %>
             <i class="fa fa-pencil-square"></i>
             Campaigns
             <% end %>

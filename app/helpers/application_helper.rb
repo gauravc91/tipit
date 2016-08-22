@@ -19,7 +19,7 @@ module ApplicationHelper
     
     def active_sidebar_class(*paths)  
         active = false  
-        paths.each { |path| active ||= current_page?(path) }  
+        paths.each { |path| active ||= current_page?(path) }
         active ? 'sidebaractive' : ''
     end  
     

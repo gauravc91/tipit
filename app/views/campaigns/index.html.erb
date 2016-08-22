@@ -1,0 +1,17 @@
+<div id="wrapper">
+  <%= render "layouts/side_bar"%>
+    <h1>All Campaigns</h1>
+    <p>Active Campaigns</p>
+    <% @campaigns.each do |campaign| %>
+    <h2>
+      <%= link_to campaign.title, campaign %>
+    </h2>
+    <p>
+      Created
+      <%= time_ago_in_words(campaign.created_at) %>
+      by
+      <%= campaign.user.email %>
+    </p>
+    <% end %>
+    <%= link_to "Create a new Campaign", new_campaign_path %>
+</div>
