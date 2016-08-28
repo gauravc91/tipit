@@ -1,5 +1,6 @@
 class CampaignsController < ApplicationController
     before_action :find_post, only: [:show, :edit, :update, :destroy]
+    before_action :authenticate_user!, except: [:index, :show]
     
     def index
         @campaigns = Campaign.all.order("created_at DESC")
@@ -9,11 +10,7 @@ class CampaignsController < ApplicationController
     end
     
     def new
-        if user_signed_in?
-            @campaign = current_user.campaigns.build
-        else
-            redirect_to new_user_session_url
-        end
+        @campaign = current_user.campaigns.build
     end
     
     def create
@@ -26,6 +23,11 @@ class CampaignsController < ApplicationController
     end
     
     def edit
+        if @campaign.user.email != current_user.email
+            redirect_to campaigns_url
+        else
+            render "edit"
+        end
     end
     
     def update
