@@ -1,5 +1,14 @@
 <h1><%= @campaign.title %></h1>
 <p><%= @campaign.description %></p>
 
+<div id="results">
+    <h2>
+        <%= @campaign.results.count %> results
+    </h2>
+    <%= render @campaign.results %>
+    <h3>Enter your email to proceed (THIS SHOULD BE CUSTOM SET BY USER)</h3>
+    <%= render "results/form" %>
+</div>
+
 <%= link_to "Edit", edit_campaign_path(@campaign) %>
 <%= link_to "Delete", campaign_path(@campaign), method: :delete, data: { confirm: "Are you sure? there's no turning back" } %>
