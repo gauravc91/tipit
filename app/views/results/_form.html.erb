@@ -1,0 +1,5 @@
+<%= simple_form_for([@campaign, @campaign.results.build]) do |f| %>
+    <%= f.input :email %>
+    <%= f.submit "Submit Email" %>
+<% end %>
+    
