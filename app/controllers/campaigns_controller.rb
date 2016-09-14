@@ -23,7 +23,7 @@ class CampaignsController < ApplicationController
     end
     
     def edit
-        if @campaign.user.email != current_user.email
+        if @campaign.user != current_user
             redirect_to campaigns_url
         else
             render "edit"

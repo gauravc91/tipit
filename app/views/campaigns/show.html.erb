@@ -3,6 +3,9 @@
 
 <div id="results">
     <h2>
+        <% if @campaign.user == current_user %>
+        <%= link_to "View all results", campaign_results_path(@campaign) %>
+        <% end %>
         <%= @campaign.results.count %> results
     </h2>
     <%= render @campaign.results %>
