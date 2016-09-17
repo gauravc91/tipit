@@ -9,8 +9,8 @@
         <%= "Result".pluralize(@campaign.results.count) %>
         <% end %>
     </h2>
-    <%= render @campaign.results %>
-    <h3>Enter your email to proceed (THIS SHOULD BE CUSTOM SET BY USER)</h3>
+    <h3>Enter your email to proceed</h3>
+    <h2>Reminder! (Campaign should be customisable, including actions assigned.)</h2>
     <%= render "results/form" %>
 </div>
 
