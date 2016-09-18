@@ -7,7 +7,7 @@ gem 'rails',                  '~> 4.2.6'
 # Starting postgresql server - sudo service postgresql start
 gem 'pg'
 # Use SCSS for stylesheets
-gem 'sass-rails',             '5.0.4'
+gem 'sass-rails'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier',               '2.7.2'
 # Use CoffeeScript for .coffee assets and views
@@ -20,7 +20,8 @@ gem 'bootstrap-sass',         '3.3.6'
 gem 'devise'
 gem 'omniauth-facebook'
 # Use jquery as the JavaScript library
-gem 'jquery-rails',           '4.1.1'
+gem 'jquery-rails',           '4.2.1'
+gem 'jquery-ui-rails'
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks',             '2.5.3'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
@@ -35,6 +36,8 @@ gem 'will_paginate',          '3.0.7'
 gem 'bootstrap-will_paginate', '0.0.10'
 gem 'stripe'
 gem 'simple_form',            '~> 3.2.1'
+#Nested Forms
+gem 'cocoon'
 # gem 'whenever', :require => false CRONJOBS GEM
 
 # Use Unicorn as the app server
