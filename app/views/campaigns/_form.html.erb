@@ -1,7 +1,16 @@
-<ul>
 <%= simple_form_for @campaign do |f| %>
     <%= f.input :title %>
     <%= f.input :description %>
+    <h3>Custom fields</h3>
+    <div id="actions">
+        <div class="sortThese">
+        <%= f.simple_fields_for :actions do |action| %>
+        <%= render 'action_fields', f: action %>
+        <% end %>
+        </div>
+        <div class="links">
+            <%= link_to_add_association 'Add Action', f, :actions %>
+        </div>
+    </div>
     <%= f.submit %>
 <% end %>
-</ul>

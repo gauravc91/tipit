@@ -32,6 +32,7 @@ class CampaignsController < ApplicationController
     
     def update
         if @campaign.update(campaign_params)
+            flash[:notice] = "Successfully updated your campaign"
             redirect_to @campaign
         else
             render "edit"
@@ -54,6 +55,6 @@ class CampaignsController < ApplicationController
     end
     
     def campaign_params
-        params.require(:campaign).permit(:title, :description)
+        params.require(:campaign).permit(:title, :description, actions_attributes: [:id, :field, :_destroy])
     end
 end
