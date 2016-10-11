@@ -3,3 +3,7 @@
 # You can use CoffeeScript in this file: http://coffeescript.org/
 jQuery ->
     $(".sortThese").sortable();
+    #Render preview campaign field divs
+    $('.previewcheckbox').change(function() {
+    $('#emailpreview').toggle(this.checked);
+    });
