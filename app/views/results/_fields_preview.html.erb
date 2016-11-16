@@ -1,4 +1,4 @@
-<%= f.fields_for :results do |results_form| %>
+<%= f.simple_fields_for([@campaign, @campaign.results.build]) do |results_form| %>
 <div id="emailpreview" style="display: <%= show_hide(@campaign.email_field?)%>;">
     <strong>Email Input Field</strong>
     <%= results_form.email_field :email, :placeholder=> "Enter your email" %>

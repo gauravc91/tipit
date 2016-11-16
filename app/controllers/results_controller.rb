@@ -3,7 +3,8 @@ class ResultsController < ApplicationController
     
     def create
         @campaign = Campaign.find(params[:campaign_id])
-        @result = @campaign.results.create(params[:result].permit(:email))
+        @result = @campaign.results.create(params[:result].permit(:email, :first_name, :last_name))
+        @result.save
         if @result.save
             redirect_to campaign_path(@campaign)
         else
@@ -19,6 +20,13 @@ class ResultsController < ApplicationController
             flash[:alert] = "Insufficient permisions."
             redirect_to campaigns_url
         end
+    end
+    
+    def show
+        @campaign = Campaign.find(params[:campaign_id])
+    end
+    
+    def result_params
     end
 
 end

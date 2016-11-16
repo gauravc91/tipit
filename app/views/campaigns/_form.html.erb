@@ -5,13 +5,14 @@
     <div id="actions">
         <div class="sortThese">
             <strong>Sortable fields go here</strong>
+            <%= render "results/fields_preview", f: f %>
         </div>
     <%= f.label :email_field %>
-    <%= f.check_box :email_field, class: "previewcheckbox" %>
+    <%= f.check_box :email_field, id: "boxemail" %>
     <%= f.label :first_name_field %>
-    <%= f.check_box :first_name_field, class: "previewcheckbox" %>
+    <%= f.check_box :first_name_field, id: "boxfirstname" %>
     <%= f.label :last_name_field %>
-    <%= f.check_box :last_name_field, class: "previewcheckbox" %>
+    <%= f.check_box :last_name_field, id: "boxlastname" %>
     </div>
     <%= f.submit %>
 <% end %>

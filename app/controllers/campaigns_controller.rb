@@ -55,6 +55,6 @@ class CampaignsController < ApplicationController
     end
     
     def campaign_params
-        params.require(:campaign).permit(:title, :description, :email_field, :first_name_field, :last_name_field)
+        params.require(:campaign).permit(:title, :description, :email_field, :first_name_field, :last_name_field, results_attributes: [:id, :email, :first_name, :last_name])
     end
 end

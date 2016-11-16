@@ -1,5 +1,13 @@
 <%= simple_form_for([@campaign, @campaign.results.build]) do |f| %>
-    <%= f.input :email %>
-    <%= f.submit "Submit Email" %>
+    <% if @campaign.email_field? %>
+        <%= f.email_field :email, :placeholder=> "Enter your email" %>
+    <% end %>
+    <% if @campaign.first_name_field? %>
+        <%= f.text_field :first_name, :placeholder=> "Enter your first name" %>
+    <% end %>
+    <% if @campaign.last_name_field? %>
+        <%= f.text_field :last_name, :placeholder=> "Enter your last name" %>
+    <% end %>
+    <%= f.submit "Next" %>
 <% end %>
     
