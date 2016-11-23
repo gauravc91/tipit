@@ -1,6 +1,7 @@
 class CampaignsController < ApplicationController
     before_action :find_post, only: [:show, :edit, :update, :destroy]
     before_action :authenticate_user!, except: [:index, :show]
+    before_filter :disable_nav, only: [:show]
     
     def index
         @campaigns = Campaign.all.order("created_at DESC")
