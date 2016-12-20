@@ -1,17 +1,33 @@
 <div id="wrapper">
   <%= render "layouts/side_bar"%>
-    <h1>All Campaigns</h1>
-    <p>Active Campaigns</p>
-    <% @campaigns.each do |campaign| %>
-    <h2>
-      <%= link_to campaign.title, campaign %>
-    </h2>
-    <p>
-      Created
-      <%= time_ago_in_words(campaign.created_at) %>
-      ago by
-      <%= campaign.user.email %>
-    </p>
-    <% end %>
-    <%= link_to "Create a new Campaign", new_campaign_path %>
+    <div id="page-content-wrapper">
+      <div class="container-fluid">
+        <div id="campaign-index">
+          <h1 id="title">Campaigns</h1>
+          <hr>
+          <br>
+          <br>
+          <%= link_to new_campaign_path, id: "new-campaign" do %><span class="fa fa-plus"></span> New Campaign <% end %>
+          <br>
+          <br>
+          <br>
+          <hr>
+          <h2><%= @user.campaigns.count %> Active Campaigns</h2>
+          <% @campaigns.each do |campaign| %>
+          <div class="active-campaigns">
+            <h2>
+              <%= link_to campaign.title, campaign %>
+            </h2>
+            <p>
+              Created
+              <%= time_ago_in_words(campaign.created_at) %>
+              ago by
+              <%= campaign.user.email %>
+            </p>
+          </div>
+          <% end %>
+          <h2>Ended Campaigns</h2>
+      </div>
+    </div>
+  </div>
 </div>

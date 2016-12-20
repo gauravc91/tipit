@@ -4,7 +4,13 @@ class CampaignsController < ApplicationController
     before_filter :disable_nav, only: [:show]
     
     def index
-        @campaigns = Campaign.all.order("created_at DESC")
+        if user_signed_in?
+            @user = current_user
+            @campaigns = @user.campaigns.order("created_at DESC")
+        else
+            flash[:alert] = "You need to be signed in to do that."
+            redirect_to new_user_session_url
+        end
     end
     
     def show
@@ -33,7 +39,7 @@ class CampaignsController < ApplicationController
     
     def update
         if @campaign.update(campaign_params)
-            flash[:notice] = "Successfully updated your campaign"
+            flash[:notice] = "Successfully updated your campaign."
             redirect_to @campaign
         else
             render "edit"

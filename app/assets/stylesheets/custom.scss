@@ -3,16 +3,19 @@
 @import "font-awesome";
 @import url(https://fonts.googleapis.com/css?family=Roboto);
 @import url(https://fonts.googleapis.com/css?family=Open+Sans:400,600,800);
+@import url(https://fonts.googleapis.com/css?family=Ubuntu:400,700,400italic|Open+Sans:300);
 
 $light-blue:       #0C8FFF;
 $dark-blue:        #006BC7;
 $background-color: #FDFDFD;
 $nav-blue:         #006BC7;
+$home-blue:        #0c8fff; /* Alt to this is #0f7fd2 which is darker */
 $nav-grey:         #6f7c82;
 $dark-hover:       #0F7EDE;
 $alert-red:        #c11111;
 $alert-green:      #0ea50e;
 $newbackground:    #f9f9f9;
+$campaign-title:   #353d41;
 
 /* GENERAL RULES */
 body {
@@ -20,7 +23,7 @@ body {
 }
 
 a {
-    font-family: Open Sans,sans-serif;
+    font-family: 'Ubuntu', sans-serif;
 }
 
 .input-lg {
@@ -53,7 +56,6 @@ a {
 
 .alert-notice {
     color: #009d1b;
-    font-family: 'Open Sans', sans-serif;
     border: 2px solid #009d1b;
     margin: 0 30%;
     background: white;
@@ -64,6 +66,7 @@ a {
 
 .row-centered {
     text-align:center;
+    width: 100%;
 }
 .col-centered {
     display:inline-block;
@@ -196,6 +199,79 @@ a {
     }
 }
 
+.fullscreen-block {
+    height: 100vh;
+    width: 100%;
+    display: table;
+}
+
+.page-body {
+    h1 {
+        color: $home-blue;
+        font-size: 2.8em;
+        font-weight: 700;
+    }
+    .static-anim-text {
+        text-align: center;
+        font-size: 2.2em;
+        color: $home-blue;
+        font-weight: 400;
+    }
+    .video-space {
+        padding: 100px 0px 100px 0px;
+        border: 2px solid black;
+        margin: 0 18%;
+        p {
+            text-align: center;
+        }
+    }
+    .see-how {
+        .btn {
+            white-space: normal;
+            background: #efd916;
+            color: #000;
+            border: 1px solid #ffffff;
+            border-color: white;
+            font-size: 16px;
+            border-radius: 8px;
+            font-weight: bold;
+            text-shadow: 0 1px 1px #626262;
+            padding: 13px 6px 13px 6px;
+            transition: background 0.3s, color 0.3s;
+            &:hover {
+                background: #ffe929;
+                color: #302e2e;
+            }
+        }
+    }
+    .try-it {
+        .btn {
+            white-space: normal;
+            padding: 19px 26px;
+            font-size: 21px;
+            line-height: 21px;
+            background: $home-blue;
+            color: #fff;
+            border: none;
+            transition: background 0.3s;
+            &:hover {
+                background: $nav-blue;
+            }
+        }
+    }
+}
+
+.grey-home {
+    box-shadow: inset 0px 14px 65px -11px rgba(232, 235, 239, 1),inset 0px -14px 65px -11px rgba(232, 235, 239, 1);
+    height: 300px;
+    margin-top: -60px;
+    #title {
+        color: #353d41;
+        font-weight: 900;
+        font-size: 2.5em;
+    }
+}
+
 /* HOME PT Search Engine */
 .container {
     #top {
@@ -218,6 +294,7 @@ a {
     background-color: white !important;
     color: $light-blue !important;
     font-weight: 600;
+    transition: background-color 0.3s;
     &:hover {
         background-color: $light-blue !important;
         border: 2px solid $dark-blue;
@@ -869,5 +946,51 @@ div {
     label {
         font-family: Open Sans, sans-serif;
         color: #585858;
+    }
+}
+
+/* Campaigns */
+
+#campaign-index {
+    #title {
+        font-weight: 700;
+        color: #278ce2;
+        text-align: left;
+    }
+    #new-campaign {
+        white-space: normal;
+        padding: 19px 26px;
+        font-size: 21px;
+        line-height: 21px;
+        background: $home-blue;
+        color: #fff;
+        border: none;
+        transition: background 0.3s;
+        border-radius: 4px;
+        &:hover {
+            background: $nav-blue;
+            text-decoration: none;
+        }
+        &:focus {
+            text-decoration: none;
+        }
+    }
+    h2 {
+        color: $campaign-title;
+        text-align: left;
+    }
+    .active-campaigns {
+        border-radius: 4px;
+        padding: 19px 26px;
+        color: #353d41;
+        margin-bottom: 10px;
+        background: #eee;
+        box-shadow: 0 0 6px 1px #ababab;
+        p {
+            color: #353d41;
+        }
+        a {
+            color: #353d41;
+        }
     }
 }
