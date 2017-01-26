@@ -1,6 +1,6 @@
 <%= simple_form_for @campaign do |f| %>
-    <%= f.input :title %>
-    <%= f.input :description %>
+    <%= f.input :title, :placeholder=> "Campaign Title", :autocomplete=> "off", label: false %>
+    <%= f.input :description, :placeholder=> "Description", :autocomplete=> "off", label: false %>
     <h3>Custom fields</h3>
     <div id="actions">
         <div class="sortThese">

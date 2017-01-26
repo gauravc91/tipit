@@ -1,4 +1,4 @@
-<div class="navbar navbar-default navbar-fixed-top" id="home-nav" role="navigation">
+<div class="navbar navbar-default navbar-fixed-top" id="logged_in_nav" role="navigation">
     <div class="container">
     <div class="navbar-header">
         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -12,14 +12,18 @@
     <ul class="nav navbar-nav navbar-right navbar-collapse collapse">
         <% if user_signed_in? %>
         <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Your account <b class="caret"></b></a>
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><%= current_user.first_name %> <b class="caret"></b></a>
                 <ul class="dropdown-menu">
                     <li><%= link_to "Account Settings", edit_user_registration_path %></li>
                     <li><%= link_to "Overview" %></li>
                     <li><%= link_to "Sign Out", destroy_user_session_path, method: "delete" %></li>
                 </ul>
         </li>
-        <li><%= link_to "Dashboard", "#", class: "ex" %></li>
+        <li><%= link_to "#", class: "ex" do %>
+        <i class="fa fa-desktop"></i>
+        Dashboard
+        <% end %>
+        </li>
         <% else %>
         <li><%= link_to "Log In", new_user_session_path, id: "login" %></li>
         <li><%= link_to "Sign Up", new_user_registration_path, class: "ex" %></li>
