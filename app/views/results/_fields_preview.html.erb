@@ -1,14 +1,11 @@
 <%= f.simple_fields_for([@campaign, @campaign.results.build]) do |results_form| %>
-<div id="emailpreview" style="display: <%= show_hide(@campaign.email_field?)%>;">
-    <strong>Email Input Field</strong>
+<div id="emailpreview" class="campaign_input_field" style="display: <%= show_hide(@campaign.email_field?)%>;">
     <%= results_form.email_field :email, :placeholder=> "Enter your email" %>
 </div>
-<div id="firstnamepreview" style="display: <%= show_hide(@campaign.first_name_field?)%>;">
-    <strong>First Name Input Field</strong>
+<div id="firstnamepreview" class="campaign_input_field" style="display: <%= show_hide(@campaign.first_name_field?)%>;">
     <%= results_form.text_field :first_name, :placeholder=> "Enter your first name" %>
 </div>
-<div id="lastnamepreview" style="display: <%= show_hide(@campaign.last_name_field?)%>;">
-    <strong>Last Name Input Field</strong>
+<div id="lastnamepreview" class="campaign_input_field" style="display: <%= show_hide(@campaign.last_name_field?)%>;">
     <%= results_form.text_field :last_name, :placeholder=> "Enter your last name" %>
 </div>
 <% end %>

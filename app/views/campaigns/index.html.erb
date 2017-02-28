@@ -16,9 +16,12 @@
           <% @campaigns.each do |campaign| %>
           <div class="active-campaigns">
             <h2>
-              <%= link_to campaign.title, campaign %>
+              <%= link_to campaign.title.html_safe, campaign %>
             </h2>
             <p>
+              <%=h truncate(campaign.description, :length => 150) %>
+            </p>
+            <p class="created">
               Created
               <%= time_ago_in_words(campaign.created_at) %>
               ago by

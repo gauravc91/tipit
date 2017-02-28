@@ -37,6 +37,9 @@ gem 'will_paginate',          '3.0.7'
 gem 'bootstrap-will_paginate', '0.0.10'
 gem 'stripe'
 gem 'simple_form',            '~> 3.2.1'
+gem 'bootsy'
+gem 'switchery-rails'
+gem 'jquery-minicolors-rails'
 #Nested Forms
 gem 'cocoon'
 # gem 'whenever', :require => false CRONJOBS GEM

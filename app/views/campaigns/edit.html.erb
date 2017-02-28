@@ -1,3 +1,85 @@
-<h1>Edit Campaign</h1>
-<%= render "form" %>
-<%= link_to "Back to Campaign", campaign_path %>
+<div id="wrapper">
+    <%= render "layouts/side_bar" %>
+        <div id="page-content-wrapper">
+            <div class="container-fluid">
+                <div id="campaign-new">
+                    <h1 id="title">Edit Campaign</h1>
+                    <hr>
+                    <%= simple_form_for @campaign, :html=> { id: "campaign-form" } do |f| %>
+                        <div id="campaign-editor" class="col-xs-12 col-lg-3">
+                            <ul class='nav nav-pills'>
+                                <li class='active'>
+                                    <%= link_to "#editor", class: "editor-btn", data: { toggle: "tab" } do %>
+                                    <i class="fa fa-pencil"></i>
+                                    Editor
+                                    <% end %>
+                                </li>
+                                <li>
+                                    <%= link_to "#emailsetup", class: "editor-btn", data: { toggle: "tab" } do %>
+                                    <i class="fa fa-envelope-o"></i>
+                                    Email Setup
+                                    <% end %>
+                                </li>
+                                <li>
+                                    <%= button_tag "Update Campaign <i class='fa fa-arrow-right'></i>".html_safe, :id => 'create-new-campaign', data: { disable_with: "Updating Campaign... <i class='fa fa-refresh fa-spin'></i>" } %>
+                                </li>
+                            </ul>
+                            <hr>
+                            <h2 id="campaign-settings">Campaign Settings</h2>
+                            <div class="campaign-settings-scroll">
+                            <p class="label-settings">Fields</p>
+                            <li class="checkbox-settings">
+                                <%= f.label :email_field %>
+                                <%= f.check_box :email_field, id: "boxemail", class: "js-switch1" %>
+                            </li>
+                            <li class="checkbox-settings">
+                                <%= f.label :first_name_field %>
+                                <%= f.check_box :first_name_field, id: "boxfirstname", class: "js-switch2" %>
+                            </li>
+                            <li class="checkbox-settings">
+                                <%= f.label :last_name_field %>
+                                <%= f.check_box :last_name_field, id: "boxlastname", class: "js-switch3" %>
+                            </li>
+                            <p class="label-settings">Integrations</p>
+                            <li>
+                                Facebook
+                            </li>
+                            <li>
+                                Snapchat
+                            </li>
+                            <p class="label-settings">Custom Action</p>
+                            <p class="label-settings">Colors</p>
+                            <hr>
+<%-# simple_form_for @campaign do |f| -%>
+<%-# f.label :email_field -%>
+                            </div>
+                        </div>
+                        <div class="tab-content">
+                            <div id='editor' class='tab-pane fade in active col-xs-12 col-lg-9'>
+                                <div id="campaign-preview">
+                                    <div id="preview-title">
+                                        <p>Preview</p>
+                                    </div>
+                                    <br>
+                                    <div id="inside-preview">
+                                        <%= f.input :title, :placeholder=> "Campaign Title", :autocomplete=> "off", label: false, as: :bootsy %>
+                                        <%= f.input :description, :placeholder=> "Description", :autocomplete=> "off", label: false %>
+                                        <h3>Custom fields</h3>
+                                        <div class="sortThese">
+                                            <strong>Sortable fields go here</strong>
+                                            <%= render "results/fields_preview", f: f %>
+                                        </div>
+<%-# Where f.submit usually is %>
+                                    </div>
+<%-# end -%>
+                                </div>
+                            </div>
+                            <div id='emailsetup' class='tab-pane fade col-xs-12 col-lg-9'>
+                                <div class='row'>Email API setup can go here? Or other settings</div>
+                            </div>
+                        </div>
+                    <% end %>
+                </div>
+            </div>
+        </div>
+</div>

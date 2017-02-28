@@ -1,5 +1,5 @@
 <%= simple_form_for @campaign do |f| %>
-    <%= f.input :title, :placeholder=> "Campaign Title", :autocomplete=> "off", label: false %>
+    <%= f.input :title, :placeholder=> "Campaign Title", :autocomplete=> "off", label: false, as: :bootsy %>
     <%= f.input :description, :placeholder=> "Description", :autocomplete=> "off", label: false %>
     <h3>Custom fields</h3>
     <div id="actions">
