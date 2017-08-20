@@ -1,19 +1,20 @@
 class CampaignsController < ApplicationController
-  before_action :find_post, only: %i[show edit update destroy]
-  before_action :authenticate_user!, except: %i[index show]
+  before_action :find_post, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!, except: [:index, :show]
   before_action :disable_nav, only: [:show]
 
   def index
     if user_signed_in?
       @user = current_user
-      @campaigns = @user.campaigns.order('created_at DESC')
+      @campaigns = @user.campaigns.order("created_at DESC")
     else
-      flash[:alert] = 'You need to be signed in to do that.'
+      flash[:alert] = "You need to be signed in to do that."
       redirect_to new_user_session_url
     end
   end
 
-  def show; end
+  def show
+  end
 
   def new
     @campaign = current_user.campaigns.build
@@ -24,7 +25,7 @@ class CampaignsController < ApplicationController
     if @campaign.save
       redirect_to @campaign
     else
-      render 'new'
+      render "new"
     end
   end
 
@@ -32,16 +33,16 @@ class CampaignsController < ApplicationController
     if @campaign.user != current_user
       redirect_to campaigns_url
     else
-      render 'edit'
+      render "edit"
     end
   end
 
   def update
     if @campaign.update(campaign_params)
-      flash[:notice] = 'Successfully updated your campaign.'
+      flash[:notice] = "Successfully updated your campaign."
       redirect_to @campaign
     else
-      render 'edit'
+      render "edit"
     end
   end
 
@@ -51,6 +52,7 @@ class CampaignsController < ApplicationController
     else
       render @campaign
     end
+
   end
 
   private
@@ -60,6 +62,6 @@ class CampaignsController < ApplicationController
   end
 
   def campaign_params
-    params.require(:campaign).permit(:title, :description, :email_field, :first_name_field, :last_name_field, results_attributes: %i[id email first_name last_name])
+    params.require(:campaign).permit(:title, :description, :email_field, :first_name_field, :last_name_field, results_attributes: [:id, :email, :first_name, :last_name])
   end
 end

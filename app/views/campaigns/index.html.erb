@@ -12,6 +12,7 @@
           <br>
           <br>
           <hr>
+          <% if @user.campaigns.count >= 1 %>
           <h2><%= @user.campaigns.count %> Active Campaigns</h2>
           <% @campaigns.each do |campaign| %>
           <div class="active-campaigns">
@@ -28,6 +29,9 @@
               <%= campaign.user.email %>
             </p>
           </div>
+          <% end %>
+          <% else %>
+              <h2>You have no Campaigns!</h2>
           <% end %>
           <h2>Ended Campaigns</h2>
       </div>

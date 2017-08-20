@@ -3,6 +3,7 @@
 # You can use CoffeeScript in this file: http://coffeescript.org/
 jQuery ->
     document.addEventListener('page:load', Bootsy.init);
+    #document.addEventListener('turbolinks:load', Bootsy.init);
     #For Campaign Checkbox's
     elem = document.querySelector('.js-switch1')
     init = new Switchery(elem, { color: '#58b2ff' })

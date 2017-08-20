@@ -11,14 +11,16 @@
 // about supported directives.
 //
 //= require jquery
+//= require jquery_ujs
+//= require jquery.turbolinks
+//= require jquery-ui
 //= require jquery.minicolors
 //= require jquery.minicolors.simple_form
-//= require jquery-ui
-//= require jquery_ujs
 //= require cocoon
 //= require bootstrap
 //= require turbolinks
-//= require jquery.turbolinks
 //= require bootsy
 //= require switchery
 //= require_tree .
+//=require turbolinks
+//=require turbolinks-compatibility
