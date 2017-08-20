@@ -2,41 +2,41 @@ source 'https://rubygems.org'
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails',                  '~> 4.2.6'
+gem 'rails',                  '5.1.3'
 # Use PostgreSQL as the database for Active Record
 # Starting postgresql server - sudo service postgresql start
 gem 'pg'
 # Use SCSS for stylesheets
 gem 'sass-rails'
 # Use Uglifier as compressor for JavaScript assets
-gem 'uglifier',               '2.7.2'
+gem 'uglifier'
 # Use CoffeeScript for .coffee assets and views
-gem 'coffee-rails',           '4.1.1'
+gem 'coffee-rails'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 gem 'bootstrap-social-rails'
 gem 'font-awesome-rails'
-gem 'bootstrap-sass',         '3.3.6'
+gem 'bootstrap-sass'
 gem 'devise'
 gem 'omniauth-facebook'
 # Use jquery as the JavaScript library
-gem 'jquery-rails',           '4.2.1'
+gem 'jquery-rails'
 gem 'jquery-ui-rails'
 gem 'jquery-turbolinks'
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
-gem 'turbolinks',             '2.5.3'
+gem 'turbolinks'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
-gem 'jbuilder',               '2.4.0'
+gem 'jbuilder'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc',                   '0.4.0', group: :doc
 
 # Use ActiveModel has_secure_password
-gem 'bcrypt',                 '3.1.11'
+gem 'bcrypt'
 
-gem 'will_paginate',          '3.0.7'
-gem 'bootstrap-will_paginate', '0.0.10'
+gem 'will_paginate'
+gem 'bootstrap-will_paginate'
 gem 'stripe'
-gem 'simple_form',            '~> 3.2.1'
+gem 'simple_form'
 gem 'bootsy'
 gem 'switchery-rails'
 gem 'jquery-minicolors-rails'
@@ -52,9 +52,9 @@ gem 'cocoon'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
-  gem 'byebug',               '8.2.1'
-  gem 'web-console',          '3.1.1'
-  gem 'spring',               '1.6.2'
+  gem 'byebug'
+  gem 'web-console'
+  gem 'spring'
 end
 
 

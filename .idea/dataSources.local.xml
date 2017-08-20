@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="dataSourceStorageLocal">
+    <data-source name="postgres@localhost" uuid="f51a150a-26b1-4b10-8a27-db72940b6fbd">
+      <database-info product="PostgreSQL" version="9.6.2" jdbc-version="4.2" driver-name="PostgreSQL JDBC Driver" driver-version="42.1.1">
+        <identifier-quote-string>&quot;</identifier-quote-string>
+      </database-info>
+      <case-sensitivity plain-identifiers="lower" quoted-identifiers="exact" />
+      <secret-storage>master_key</secret-storage>
+      <introspection-schemas>postgres:public</introspection-schemas>
+    </data-source>
+    <data-source name="Rails tipit: production" uuid="3a5231df-2e21-4ccf-bb43-4b5b8e758f2b">
+      <database-info product="" version="" jdbc-version="" driver-name="" driver-version="" />
+      <first-sync>true</first-sync>
+    </data-source>
+    <data-source name="Rails tipit: test" uuid="333dad42-a35e-4a6b-8d21-71deccaecc22">
+      <database-info product="PostgreSQL" version="9.6.2" jdbc-version="4.2" driver-name="PostgreSQL JDBC Driver" driver-version="42.1.1">
+        <identifier-quote-string>&quot;</identifier-quote-string>
+      </database-info>
+      <case-sensitivity plain-identifiers="lower" quoted-identifiers="exact" />
+      <user-name>vasa</user-name>
+      <introspection-schemas>beta_test:public</introspection-schemas>
+    </data-source>
+    <data-source name="Rails tipit: development" uuid="0b7f59df-de47-4910-a257-19fbd33ebc35">
+      <database-info product="PostgreSQL" version="9.6.2" jdbc-version="4.2" driver-name="PostgreSQL JDBC Driver" driver-version="42.1.1">
+        <identifier-quote-string>&quot;</identifier-quote-string>
+      </database-info>
+      <case-sensitivity plain-identifiers="lower" quoted-identifiers="exact" />
+      <user-name>vasa</user-name>
+      <introspection-schemas>beta_development:public</introspection-schemas>
+    </data-source>
+  </component>
+</project>
