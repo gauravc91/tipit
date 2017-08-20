@@ -705,8 +705,8 @@ div {
 }
 
 .sidebaractive {
-    border-right: 3px solid $light-blue;
-    background-color: #f9f9f9;
+    border-right: 5px solid $light-blue;
+    background-color: #073d8d;
     font-weight: bold;
 }
 
@@ -906,7 +906,7 @@ div {
     height: 100%;
     margin-left: -210px;
     overflow-y: auto;
-    background: #fff;
+    background: #095ddb;
     -webkit-transition: all 0.5s ease;
     -moz-transition: all 0.5s ease;
     -o-transition: all 0.5s ease;
@@ -934,6 +934,7 @@ div {
     h4 {
         text-align: center;
         font-family: 'Rubik', sans-serif;
+        color: #DEEBFF;
         @media(max-width:767px) {
             visibility: hidden;
         }
@@ -951,20 +952,20 @@ div {
         a {
             display: block;
             text-decoration: none;
-            color: #337ab7;
+            color: #DEEBFF;
             font-size: 14px;
             &:hover {
                 text-decoration: none;
-                border-right: 4px solid $light-blue;
-                background-color: #f4f4f4;
+                border-right: 5px solid $light-blue;
+                background-color: #094eb6;
                 border-top-right-radius: 6px;
                 border-bottom-right-radius: 6px;
-                color: #23527c;
+                color: #DEEBFF;
                 font-weight: bold;
             }
             i {
                 font-size: 22px;
-                color: $light-blue;
+                color: #DEEBFF;
                 display: inline-block;
                 margin-right: 2px;
                 float: left;
@@ -974,8 +975,6 @@ div {
             }
             @media(max-width:767px) {
                 white-space: nowrap;
-                border-top: 1px solid #eee;
-                border-bottom: 1px solid #eee;
                 line-height: 32px;
                 position: relative;
                 i {
