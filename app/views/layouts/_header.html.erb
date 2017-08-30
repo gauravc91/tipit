@@ -19,7 +19,7 @@
                     <li><%= link_to "Sign Out", destroy_user_session_path, method: "delete" %></li>
                 </ul>
         </li>
-        <li><%= link_to "Dashboard", "#", class: "ex" %></li>
+        <li><%= link_to "Dashboard", campaigns_path, class: "ex" %></li>
         <% else %>
         <li><%= link_to "Log In", new_user_session_path, id: "login" %></li>
         <li><%= link_to "Sign Up", new_user_registration_path, class: "ex" %></li>

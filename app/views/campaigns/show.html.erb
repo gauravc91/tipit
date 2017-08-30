@@ -1,19 +1,16 @@
+<div class="show-campaign-btns">
+  <%= link_to "Edit", edit_campaign_path(@campaign), class: "green-btn" %>
+  <% if @campaign.user == current_user %>
+      <%= link_to "View", campaign_results_path(@campaign) %>
+      <%= @campaign.results.count %>
+      <%= "Result".pluralize(@campaign.results.count) %>
+  <% end %>
+  <%= link_to "Delete", campaign_path(@campaign), method: :delete, data: { confirm: "Are you sure? there's no turning back" } %>
+</div>
+<div id="show-campaign">
 <h1><%= @campaign.title.html_safe %></h1>
 <p><%= @campaign.description %></p>
-
 <div id="results">
-    <h2>
-        <% if @campaign.user == current_user %>
-        <%= link_to "View", campaign_results_path(@campaign) %>
-        <%= @campaign.results.count %>
-        <%= "Result".pluralize(@campaign.results.count) %>
-        <% end %>
-    </h2>
-    <h3>Enter your email to proceed</h3>
-    <h2>Reminder! (Campaign should be customisable, including actions assigned.)</h2>
     <%= render "results/form" %>
-    <strong>Render Campaign result FIELDS here</strong>
 </div>
-
-<%= link_to "Edit", edit_campaign_path(@campaign) %>
-<%= link_to "Delete", campaign_path(@campaign), method: :delete, data: { confirm: "Are you sure? there's no turning back" } %>
+</div>
