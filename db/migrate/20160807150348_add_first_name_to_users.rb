@@ -1,4 +1,4 @@
-class AddFirstNameToUsers < ActiveRecord::Migration
+class AddFirstNameToUsers < ActiveRecord::Migration[5.1]
   def change
     add_column :users, :first_name, :string, null: false
   end
