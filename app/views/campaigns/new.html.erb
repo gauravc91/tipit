@@ -17,8 +17,8 @@
                                 </li>
                                 <li>
                                     <%= link_to "#emailsetup", class: "editor-btn", data: { toggle: "tab" } do %>
-                                    <i class="fa fa-envelope-o"></i>
-                                    Email Setup
+                                    <i class="fa fa-cog"></i>
+                                    Campaign Setup
                                     <% end %>
                                 </li>
                                 <li>
@@ -27,48 +27,25 @@
                             </ul>
                             <hr>
                             <ul class="nav nav-pills">
-                                <h2 id="campaign-settings">Campaign Settings</h2>
+                                <h2 id="campaign-settings">Customise your Campaign</h2>
                             </ul>
                             <div class="campaign-settings-scroll">
-                            <p class="label-settings">Start and Finish</p>
-                            <li>
-                                <p>When do you want to Start your campaign?</p>
-                            </li>
-                            <li>
-                                <p>When do you want to Finish your campaign?</p>
-                            </li>
-                            <p class="label-settings">Fields</p>
-                            <li class="checkbox-settings">
-                                <%= f.label :email_field %>
-                                <%= f.check_box :email_field, id: "boxemail", class: "js-switch1" %>
-                            </li>
-                            <li class="checkbox-settings">
-                                <%= f.label :first_name_field %>
-                                <%= f.check_box :first_name_field, id: "boxfirstname", class: "js-switch2" %>
-                            </li>
-                            <li class="checkbox-settings">
-                                <%= f.label :last_name_field %>
-                                <%= f.check_box :last_name_field, id: "boxlastname", class: "js-switch3" %>
-                            </li>
-                            <li>
-                              Add Custom Field
-                            </li>
-                            <p class="label-settings">Integrations</p>
-                            <li>
-                                Facebook
-                            </li>
-                            <li>
-                                Snapchat
-                            </li>
-                            <p class="label-settings">Custom Action</p>
                             <p class="label-settings">Colors</p>
-                            <p class="label-settings">Background Image</p>
                             <li>
-                              Upload Background image
+                                <p>Background Color:</p>
                             </li>
-                              <li>
-                                Preset Background images
-                              </li>
+                            <li>
+                                <p>Submit Button Color</p>
+                            </li>
+
+                            </li>
+                            <p class="label-settings">Design</p>
+                            <li>
+                                Upload Logo
+                            </li>
+                            <li>
+                                Upload Background Image
+                            </li>
                               <p class="label-settings">Text</p>
                               <hr>
 <%-# simple_form_for @campaign do |f| -%>
@@ -97,6 +74,52 @@
                             </div>
                             <div id='emailsetup' class='tab-pane fade col-xs-12 col-lg-9'>
                                 <div class='row'>Email service API's can go here. Eg mailchimp.</div>
+                              <hr>
+                              <ul class="nav nav-pills">
+                                <h2 id="campaign-settings">Campaign Settings</h2>
+                              </ul>
+                              <div class="campaign-settings-scroll">
+                                <p class="label-settings">Start and Finish</p>
+                                <li>
+                                  <p>When do you want to Start your campaign?</p>
+                                </li>
+                                <li>
+                                  <p>When do you want to Finish your campaign?</p>
+                                </li>
+                                <p class="label-settings">Fields</p>
+                                <li class="checkbox-settings">
+                                  <%= f.label :email_field %>
+                                  <%= f.check_box :email_field, id: "boxemail", class: "js-switch1" %>
+                                </li>
+                                <li class="checkbox-settings">
+                                  <%= f.label :first_name_field %>
+                                  <%= f.check_box :first_name_field, id: "boxfirstname", class: "js-switch2" %>
+                                </li>
+                                <li class="checkbox-settings">
+                                  <%= f.label :last_name_field %>
+                                  <%= f.check_box :last_name_field, id: "boxlastname", class: "js-switch3" %>
+                                </li>
+                                <li>
+                                  Add Custom Field
+                                </li>
+                                <p class="label-settings">Integrations</p>
+                                <li>
+                                  Facebook
+                                </li>
+                                <li>
+                                  Snapchat
+                                </li>
+                                <p class="label-settings">Custom Action</p>
+                                <p class="label-settings">Colors</p>
+                                <p class="label-settings">Background Image</p>
+                                <li>
+                                  Upload Background image
+                                </li>
+                                <li>
+                                  Preset Background images
+                                </li>
+                                <p class="label-settings">Text</p>
+                                <hr>
                             </div>
                         </div>
                     <% end %>
