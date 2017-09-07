@@ -7,10 +7,12 @@ import { Provider } from "react-redux";
 let store = configureStore();
 
 document.addEventListener("DOMContentLoaded", () => {
+  const node = document.getElementById("react-root");
+  const data = JSON.parse(node.getAttribute("data"));
   ReactDOM.render(
     <Provider store={store}>
-      <App />
+      <App {...data} />
     </Provider>,
-    document.getElementById("react-root")
+    node
   );
 });

@@ -12,16 +12,24 @@ var styles = {
 };
 
 const ControlPanel = ({ actions }) => {
+  let csrfToken = $("meta[name=csrf-token]").attr("content");
   return (
     <div style={styles.base}>
       <h1>Control Panel</h1>
-      <BgSetting actions={actions} />
-      <br />
-      <LogoSetting actions={actions} />
-      <br />
-      <TitleSetting actions={actions} />
-      <br />
-      <DescriptionSetting actions={actions} />
+      <form id="app_settings_form" action="/campaigns" method="post">
+        <BgSetting actions={actions} />
+        <br />
+        <LogoSetting actions={actions} />
+        <br />
+        <TitleSetting actions={actions} />
+        <br />
+        <DescriptionSetting actions={actions} />
+        <br />
+        <input type="hidden" name="authenticity_token" value={csrfToken} />
+        <button type="submit" className="btn btn-primary">
+          Create Campaign
+        </button>
+      </form>
     </div>
   );
 };
@@ -39,6 +47,7 @@ const TitleSetting = ({ actions }) => {
         aria-label="..."
         placeholder="Title"
         onChange={onTitleChange}
+        name="campaign[title]"
       />
     </div>
   );
@@ -57,6 +66,7 @@ const DescriptionSetting = ({ actions }) => {
         aria-label="..."
         placeholder="Description"
         onChange={onDescriptionChange}
+        name="campaign[description]"
       />
     </div>
   );
