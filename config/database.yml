@@ -5,16 +5,12 @@ default: &default
 
 development:
   <<: *default
-  username: vasa
-  password: <%= ENV['PASSWORD'] %>
-  database: beta_development
+  database: tipit_development
 
 test:
   <<: *default
-  username: vasa
-  password: <%= ENV['PASSWORD'] %>
-  database: beta_test
+  database: tipit_test
 
 production:
   <<: *default
-  database: beta_production
+  database: tipit_production

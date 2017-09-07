@@ -15,18 +15,12 @@ ActiveRecord::Schema.define(version: 20170127235237) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "bootsy_image_galleries", force: :cascade do |t|
-    t.integer "bootsy_resource_id"
-    t.string "bootsy_resource_type"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
   create_table "bootsy_images", force: :cascade do |t|
     t.string "image_file"
-    t.integer "image_gallery_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.bigint "image_gallery_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["image_gallery_id"], name: "index_bootsy_images_on_image_gallery_id"
   end
 
   create_table "campaigns", force: :cascade do |t|
@@ -42,7 +36,7 @@ ActiveRecord::Schema.define(version: 20170127235237) do
 
   create_table "results", force: :cascade do |t|
     t.text "email"
-    t.integer "campaign_id"
+    t.bigint "campaign_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "first_name"
