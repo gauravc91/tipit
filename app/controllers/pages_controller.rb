@@ -6,5 +6,5 @@ class PagesController < ApplicationController
       render "home"
     end
   end
-  
+
 end
