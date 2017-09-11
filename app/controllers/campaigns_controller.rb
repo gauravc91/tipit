@@ -20,6 +20,9 @@ class CampaignsController < ApplicationController
     @campaign = current_user.campaigns.build
   end
 
+  def editor
+  end
+
   def create
     @campaign = current_user.campaigns.build(campaign_params)
     if @campaign.save
