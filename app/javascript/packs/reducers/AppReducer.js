@@ -5,8 +5,8 @@ let AppReducer = function(
     bg: null,
     logo: null,
     logo_size: 2,
-    title: "[ Campaign Title ]",
-    description: "[ Campaign Description ]"
+    title: "[Click to Edit]",
+    description: "[Click to Edit]"
   },
   action
 ) {

@@ -8,6 +8,7 @@ import checkered from "../assets/images/checkered.png";
 import default_logo from "../assets/images/default_logo.png";
 import * as Constants from "../constants";
 import { Tabs, TabLink, TabContent } from "react-tabs-redux";
+import { RIEInput, RIETextArea } from "riek";
 
 var styles = {
   base: {
@@ -48,7 +49,7 @@ const App = ({ state, actions }) => {
 
       <div className="content" style={styles.content}>
         <TabContent for="tab1">
-          <Editor {...state} />
+          <Editor state={state} actions={actions} />
         </TabContent>
         <TabContent for="tab2">
           <h2>Tab2 content</h2>
@@ -59,23 +60,41 @@ const App = ({ state, actions }) => {
   );
 };
 
-const Editor = ({ bg, logo, logo_size, title, description }) => {
+const Editor = ({ state, actions }) => {
   return (
     <div
       style={{
         ...styles.editor,
-        backgroundImage: `url(${bg ? bg : checkered})`
+        backgroundImage: `url(${state.bg ? state.bg : checkered})`
       }}
     >
       <Box>
         <img
-          src={logo ? logo : default_logo}
-          style={{ ...styles.logo, width: `${50 * logo_size}` }}
+          src={state.logo ? state.logo : default_logo}
+          style={{ ...styles.logo, width: `${50 * state.logo_size}` }}
         />
-        <h1>{title}</h1>
-        <h5 style={styles.description}>{description}</h5>
+        <br />
+        <TitleSetting title={state.title} actions={actions} />
+        <br />
+        <DescriptionSetting description={state.description} actions={actions} />
       </Box>
     </div>
+  );
+};
+
+const TitleSetting = ({ title, actions }) => {
+  let onChange = obj => {
+    actions.updateTitle(obj.title);
+  };
+  return <RIEInput value={title} change={onChange} propName="title" />;
+};
+
+const DescriptionSetting = ({ description, actions }) => {
+  let onChange = obj => {
+    actions.updateDescription(obj.description);
+  };
+  return (
+    <RIETextArea value={description} change={onChange} propName="description" />
   );
 };
 

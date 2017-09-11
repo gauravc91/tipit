@@ -8,7 +8,8 @@
     "react-dom": "^15.6.1",
     "react-redux": "^5.0.6",
     "react-tabs-redux": "^1.6.0",
-    "redux": "^3.7.2"
+    "redux": "^3.7.2",
+    "riek": "^1.1.0"
   },
   "devDependencies": {
     "webpack-dev-server": "^2.7.1"
