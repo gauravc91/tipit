@@ -10,6 +10,7 @@ import * as Constants from "../constants";
 import { Tabs, TabLink, TabContent } from "react-tabs-redux";
 import { RIEInput, RIETextArea } from "riek";
 import Button from "./Button";
+import { ChromePicker } from "react-color";
 
 var styles = {
   base: {
@@ -105,7 +106,8 @@ const TitleText = ({ state, actions }) => {
         borderStyle: `${state.toolbar === "title" ? "solid" : "none"}`,
         fontSize: `${state.title.font_size}px`,
         fontStyle: state.title.font_style,
-        fontWeight: state.title.font_weight
+        fontWeight: state.title.font_weight,
+        color: state.title.color
       }}
       type="text"
       aria-label="..."
@@ -183,6 +185,12 @@ const TitleSettings = ({ title, actions }) => {
         }}
         label="I"
         pressed={title.font_style == "italic"}
+      />
+      <ChromePicker
+        color={title.color}
+        onChangeComplete={color => {
+          actions.updateTitle("color", color.hex);
+        }}
       />
       <button
         type="button"

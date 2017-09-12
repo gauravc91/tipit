@@ -10,7 +10,8 @@ let AppReducer = function(
       text: null,
       font_size: 20,
       font_style: "normal",
-      font_weight: "normal"
+      font_weight: "normal",
+      color: "#000000"
     },
     description: "[Click to Edit]"
   },
