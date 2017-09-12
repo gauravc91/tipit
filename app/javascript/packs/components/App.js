@@ -11,6 +11,7 @@ import { Tabs, TabLink, TabContent } from "react-tabs-redux";
 import { RIEInput, RIETextArea } from "riek";
 import Button from "./Button";
 import { ChromePicker } from "react-color";
+import Select from "react-select";
 
 var styles = {
   base: {
@@ -107,7 +108,8 @@ const TitleText = ({ state, actions }) => {
         fontSize: `${state.title.font_size}px`,
         fontStyle: state.title.font_style,
         fontWeight: state.title.font_weight,
-        color: state.title.color
+        color: state.title.color,
+        fontFamily: state.title.font_family
       }}
       type="text"
       aria-label="..."
@@ -186,6 +188,20 @@ const TitleSettings = ({ title, actions }) => {
         label="I"
         pressed={title.font_style == "italic"}
       />
+      <br />
+      <Select
+        value={title.font_family}
+        options={[
+          { value: "roboto", label: "Roboto" },
+          { value: "serif", label: "Serif" }
+        ]}
+        onChange={selected => {
+          actions.updateTitle("font_family", selected.value);
+        }}
+        searchable={false}
+        clearable={false}
+      />
+      <br />
       <ChromePicker
         color={title.color}
         onChangeComplete={color => {

@@ -11,7 +11,8 @@ let AppReducer = function(
       font_size: 20,
       font_style: "normal",
       font_weight: "normal",
-      color: "#000000"
+      color: "#000000",
+      font_family: "roboto"
     },
     description: "[Click to Edit]"
   },
