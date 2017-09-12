@@ -21,10 +21,11 @@ export const updateLogoSize = size => {
   };
 };
 
-export const updateTitle = text => {
+export const updateTitle = (key, value) => {
   return {
     type: ActionTypes.UPDATE_TITLE,
-    text
+    key,
+    value
   };
 };
 
@@ -32,5 +33,12 @@ export const updateDescription = text => {
   return {
     type: ActionTypes.UPDATE_DESCRIPTION,
     text
+  };
+};
+
+export const updateToolbar = element => {
+  return {
+    type: ActionTypes.UPDATE_TOOLBAR,
+    element
   };
 };

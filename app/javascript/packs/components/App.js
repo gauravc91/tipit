@@ -9,6 +9,7 @@ import default_logo from "../assets/images/default_logo.png";
 import * as Constants from "../constants";
 import { Tabs, TabLink, TabContent } from "react-tabs-redux";
 import { RIEInput, RIETextArea } from "riek";
+import Button from "./Button";
 
 var styles = {
   base: {
@@ -36,6 +37,19 @@ var styles = {
   },
   content: {
     padding: 10
+  },
+  toolbar: {
+    borderRadius: 5,
+    boxShadow: "0px 0px 5px #777",
+    padding: 10,
+    backgroundColor: Constants.COLOR_WHITE_HEX,
+    position: "absolute"
+  },
+  input: {
+    textAlign: "center",
+    display: "flex",
+    boxShadow: "none",
+    width: "100%"
   }
 };
 
@@ -68,13 +82,14 @@ const Editor = ({ state, actions }) => {
         backgroundImage: `url(${state.bg ? state.bg : checkered})`
       }}
     >
+      <Toolbar state={state} actions={actions} />
       <Box>
         <img
           src={state.logo ? state.logo : default_logo}
           style={{ ...styles.logo, width: `${50 * state.logo_size}` }}
         />
         <br />
-        <TitleSetting title={state.title} actions={actions} />
+        <TitleText state={state} actions={actions} />
         <br />
         <DescriptionSetting description={state.description} actions={actions} />
       </Box>
@@ -82,11 +97,28 @@ const Editor = ({ state, actions }) => {
   );
 };
 
-const TitleSetting = ({ title, actions }) => {
-  let onChange = obj => {
-    actions.updateTitle(obj.title);
-  };
-  return <RIEInput value={title} change={onChange} propName="title" />;
+const TitleText = ({ state, actions }) => {
+  return (
+    <input
+      style={{
+        ...styles.input,
+        borderStyle: `${state.toolbar === "title" ? "solid" : "none"}`,
+        fontSize: `${state.title.font_size}px`,
+        fontStyle: state.title.font_style,
+        fontWeight: state.title.font_weight
+      }}
+      type="text"
+      aria-label="..."
+      placeholder="Click to Edit"
+      onChange={event => {
+        actions.updateTitle("text", event.target.value);
+      }}
+      name="campaign[title]"
+      onFocus={() => {
+        actions.updateToolbar("title");
+      }}
+    />
+  );
 };
 
 const DescriptionSetting = ({ description, actions }) => {
@@ -95,6 +127,71 @@ const DescriptionSetting = ({ description, actions }) => {
   };
   return (
     <RIETextArea value={description} change={onChange} propName="description" />
+  );
+};
+
+const Toolbar = ({ state, actions }) => {
+  console.log("state.toolbar ", state.toolbar);
+  return (
+    <div>
+      {state.toolbar === "title" &&
+        <TitleSettings title={state.title} actions={actions} />}
+    </div>
+  );
+};
+
+const TitleSettings = ({ title, actions }) => {
+  return (
+    <div
+      style={{
+        ...styles.toolbar
+      }}
+    >
+      <Button
+        onClick={() => actions.updateTitle("font_size", 40)}
+        label="h1"
+        pressed={title.font_size == 40}
+      />
+      <Button
+        onClick={() => actions.updateTitle("font_size", 30)}
+        label="h2"
+        pressed={title.font_size == 30}
+      />
+      <Button
+        onClick={() => actions.updateTitle("font_size", 20)}
+        label="h3"
+        pressed={title.font_size == 20}
+      />
+      <Button
+        style={{
+          fontWeight: "bold"
+        }}
+        onClick={() => {
+          let newFontWeight = title.font_weight == "bold" ? "normal" : "bold";
+          actions.updateTitle("font_weight", newFontWeight);
+        }}
+        label="B"
+        pressed={title.font_weight == "bold"}
+      />
+      <Button
+        style={{
+          fontStyle: "italic"
+        }}
+        onClick={() => {
+          let newFontStyle = title.font_style == "italic" ? "normal" : "italic";
+          actions.updateTitle("font_style", newFontStyle);
+        }}
+        label="I"
+        pressed={title.font_style == "italic"}
+      />
+      <button
+        type="button"
+        className="btn btn-primary"
+        onClick={() => actions.updateToolbar(null)}
+      >
+        Done
+      </button>
+    </div>
   );
 };
 

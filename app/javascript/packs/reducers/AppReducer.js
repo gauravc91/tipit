@@ -5,7 +5,13 @@ let AppReducer = function(
     bg: null,
     logo: null,
     logo_size: 2,
-    title: "[Click to Edit]",
+    toolbar: null,
+    title: {
+      text: null,
+      font_size: 20,
+      font_style: "normal",
+      font_weight: "normal"
+    },
     description: "[Click to Edit]"
   },
   action
@@ -29,12 +35,20 @@ let AppReducer = function(
     case ActionTypes.UPDATE_TITLE:
       return {
         ...state,
-        title: action.text
+        title: {
+          ...state.title,
+          [action.key]: action.value
+        }
       };
     case ActionTypes.UPDATE_DESCRIPTION:
       return {
         ...state,
         description: action.text
+      };
+    case ActionTypes.UPDATE_TOOLBAR:
+      return {
+        ...state,
+        toolbar: action.element
       };
     default:
       return state;
