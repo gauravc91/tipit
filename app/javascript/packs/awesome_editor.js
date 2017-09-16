@@ -1,6 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import ReactQuill from "react-quill";
+import Draggable from "react-draggable";
 
 const AwesomeEditor = props => {
   return (
@@ -24,16 +25,31 @@ class Editor extends React.Component {
   render() {
     return (
       <div>
-        <CustomToolbar />
-        <ReactQuill
-          onChange={this.handleChange}
-          placeholder={this.props.placeholder}
-          modules={Editor.modules}
-          formats={Editor.formats}
-          theme={"snow"} // pass false to use minimal theme
-        >
-          <div key="editor" ref="editor" className="quill-contents" />
-        </ReactQuill>
+        <Draggable>
+          <div>
+            <CustomToolbar />
+          </div>
+        </Draggable>
+
+        <Draggable cancel=".no-cursor">
+          <div
+            className="box"
+            style={{ backgroundColor: "grey", padding: 20, width: 200 }}
+          >
+            <div className="no-cursor" style={{ backgroundColor: "white" }}>
+              <ReactQuill
+                onChange={this.handleChange}
+                placeholder={this.props.placeholder}
+                modules={Editor.modules}
+                formats={Editor.formats}
+                theme={"snow"} // pass false to use minimal theme
+              >
+                <div key="editor" ref="editor" className="quill-contents" />
+
+              </ReactQuill>
+            </div>
+          </div>
+        </Draggable>
       </div>
     );
   }
