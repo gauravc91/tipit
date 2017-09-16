@@ -23,6 +23,9 @@ class CampaignsController < ApplicationController
   def editor
   end
 
+  def awesome_editor
+  end
+
   def create
     @campaign = current_user.campaigns.build(campaign_params)
     if @campaign.save

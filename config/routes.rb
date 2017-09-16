@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   resources :campaigns do
     collection do
       get 'editor'
+      get 'awesome_editor'
     end
     resources :results
   end
